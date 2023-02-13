@@ -1,16 +1,17 @@
+---
 - name: Send email with file attachment
   hosts: localhost
   gather_facts: no
   tasks:
-  - name: Send email
-    mail:
-      host: mffsmtp.appleton.millsfleetfarm.com
-      port: 25
-      username: ""
-      password: ""
-      to: andy.adolphson@fleetfarm.com
-      subject: Host info
-      body: This is the current host information.
-      attachments:
-        - /tmp/combined-host-info/current_host_info.txt
-      from: AnsibleAWX@fleetfarm.com
+    - name: Send email
+      mail:
+        host: mffsmtp.appleton.millsfleetfarm.com
+        port: 25
+        username: ""
+        password: ""
+        to: andy.adolphson@fleetfarm.com
+        subject: Host info
+        body: This is the current host information.
+        attachments:
+          - /tmp/combined-host-info/current_host_info.txt
+        from: AnsibleAWX@fleetfarm.com
