@@ -1,17 +1,7 @@
 ---
 - name: Send email with file attachment
-  hosts: andy-awxnode-test
+  hosts: localhost
   gather_facts: no
   tasks:
     - name: Send email
-      mail:
-        host: mffsmtp.appleton.millsfleetfarm.com
-        port: 25
-        username: ""
-        password: ""
-        to: andy.adolphson@fleetfarm.com
-        subject: Host info
-        body: This is the current host information.
-        attachments:
-          - /tmp/combined-host-info/current_host_info.txt
-        from: AnsibleAWX@fleetfarm.com
+      command: echo "Attached is the current Linux test host information." | mail -s "Linux Host info" -a /tmp/combined-host-info/current_host_info.txt -r "AnsibleAWX@fleetfarm.com" "andy.adolphson@fleetfarm.com"
