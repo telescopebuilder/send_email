@@ -2,6 +2,8 @@
 - name: Send email with file attachment
   hosts: localhost
   gather_facts: no
+  become: yes
+  become_user: root
   tasks:
     - name: Send email
       command: echo "Attached is the current Linux test host information." | mail -s "Linux Host info" -a /tmp/combined-host-info/current_host_info.txt -r "AnsibleAWX@fleetfarm.com" "andy.adolphson@fleetfarm.com"
