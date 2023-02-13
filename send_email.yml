@@ -6,4 +6,4 @@
   become_user: ansible_andy
   tasks:
     - name: Send email
-      command: echo "This is the current host information." | sudo mail -s "Host info" -a /tmp/combined-host-info/current_host_info.txt -r "AnsibleAWX@fleetfarm.com" "andy.adolphson@fleetfarm.com"
+      command: echo "This is the current host information." | sudo mail -s "Host info" -A /tmp/combined-host-info/current_host_info.txt -r "AnsibleAWX@fleetfarm.com" "andy.adolphson@fleetfarm.com"
