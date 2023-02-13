@@ -1,6 +1,6 @@
 ---
 - name: Send email with file attachment
-  hosts: localhost
+  hosts: andy-awxnode-test
   gather_facts: no
   tasks:
     - name: Send email
